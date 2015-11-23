@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C8566086F261EF7BCD1C0599 /* libPods-AutoView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C35926E87B5FCE611EFBF3 /* libPods-AutoView.a */; };
 		CFC17A3A1C032FAD00265AF5 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC17A391C032FAD00265AF5 /* test.png */; };
+		CFC17A3D1C03316100265AF5 /* TempView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC17A3C1C03316100265AF5 /* TempView.m */; };
 		CFDCCB0F1BFF15E800A29E7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDCCB0E1BFF15E800A29E7D /* main.m */; };
 		CFDCCB121BFF15E800A29E7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDCCB111BFF15E800A29E7D /* AppDelegate.m */; };
 		CFDCCB151BFF15E800A29E7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDCCB141BFF15E800A29E7D /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		3BC82A6787207F85D55BB28B /* Pods-AutoView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoView/Pods-AutoView.debug.xcconfig"; sourceTree = "<group>"; };
 		48C35926E87B5FCE611EFBF3 /* libPods-AutoView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC17A391C032FAD00265AF5 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		CFC17A3B1C03316100265AF5 /* TempView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempView.h; sourceTree = "<group>"; };
+		CFC17A3C1C03316100265AF5 /* TempView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempView.m; sourceTree = "<group>"; };
 		CFDCCB0A1BFF15E800A29E7D /* AutoView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDCCB0E1BFF15E800A29E7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFDCCB101BFF15E800A29E7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				CFDCCB111BFF15E800A29E7D /* AppDelegate.m */,
 				CFDCCB131BFF15E800A29E7D /* ViewController.h */,
 				CFDCCB141BFF15E800A29E7D /* ViewController.m */,
+				CFC17A3B1C03316100265AF5 /* TempView.h */,
+				CFC17A3C1C03316100265AF5 /* TempView.m */,
 				CFDCCB401BFF161500A29E7D /* UIView+AutoLayout.h */,
 				CFDCCB411BFF161500A29E7D /* UIView+AutoLayout.m */,
 				CFDCCB441C03250600A29E7D /* AutoManager.h */,
@@ -363,6 +368,7 @@
 				CFDCCB151BFF15E800A29E7D /* ViewController.m in Sources */,
 				CFDCCB121BFF15E800A29E7D /* AppDelegate.m in Sources */,
 				CFDCCB0F1BFF15E800A29E7D /* main.m in Sources */,
+				CFC17A3D1C03316100265AF5 /* TempView.m in Sources */,
 				CFDCCB421BFF161500A29E7D /* UIView+AutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

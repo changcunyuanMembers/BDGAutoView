@@ -24,10 +24,6 @@ static char isAutoKey = 'a';
      objc_setAssociatedObject(self, &isAutoKey, isAutoLayout, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void)setMakeAuto:(AutoLayoutBlock)makeAuto {
-    
-}
-
 // 更新约束
 - (void)updateContentConstraints {
     
@@ -67,6 +63,49 @@ static char isAutoKey = 'a';
             v.frame = newRect;
         }
     }
+}
+
+/**
+ *  更新视图本身约束
+ *
+ *  @param isUpdateSubView 是否更新subView
+ */
+- (void)updateOriginConstraints:(BOOL)isUpdateSubView {
+    
+    NSArray* constrainsArray = self.constraints;
+    for (NSLayoutConstraint* constraint in constrainsArray) {
+        constraint.constant = constraint.constant * [AutoManager shareManager].scale;
+    }
+    [self updateConstraintsIfNeeded];
+    
+    if (isUpdateSubView) {
+        // 更新自身的同时，会主动更新子视图
+        [self updateContentConstraints];
+    }
+}
+
+/**
+ *  更新视图本身frame
+ *
+ *  @param isUpdateSubView 是否更新subView
+ */
+- (void)updateOriginFrame:(BOOL)isUpdateSubView {
+
+    float scale = [AutoManager shareManager].scale;
+    
+    CGRect newRect;
+    newRect.origin.x = self.frame.origin.x * scale;
+    newRect.origin.y = self.frame.origin.y * scale;
+    newRect.size.width = self.frame.size.width * scale;
+    newRect.size.height = self.frame.size.height * scale;
+    self.frame = newRect;
+    
+    if (isUpdateSubView) {
+        
+        // 更新自身的同时，会主动更新子视图
+        [self updateContentFrame];
+    }
+   
 }
 
 // 更新文本

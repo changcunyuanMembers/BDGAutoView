@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  TempView.h
 //  AutoView
 //
-//  Created by Liang on 15/11/20.
+//  Created by Liang on 15/11/23.
 //  Copyright © 2015年 Baidu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TempView : UIView
 
 @end
-

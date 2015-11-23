@@ -9,9 +9,7 @@
 #import "ViewController.h"
 #import "UIView+AutoLayout.h"
 #import "Masonry.h"
-
-
-
+#import "TempView.h"
 
 @interface ViewController ()
 
@@ -45,6 +43,16 @@
         make.size.mas_equalTo(CGSizeMake(300, 300));
     }];
     
+    TempView *temp1 = [[TempView alloc] initWithFrame:CGRectZero];
+    temp1.backgroundColor = [UIColor blackColor];
+    [view addSubview:temp1];
+    
+    [temp1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(5);
+        make.size.mas_equalTo(CGSizeMake(260, 100));
+    }];
+    
     UILabel *label = [[UILabel alloc] init];
     label.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
     label.font = [UIFont systemFontOfSize:20];
@@ -58,6 +66,7 @@
         make.left.equalTo(view.mas_left);
     }];
     
+    [view updateContentConstraints];
     [self.view updateContentConstraints];
     
     // Do any additional setup after loading the view, typically from a nib.
