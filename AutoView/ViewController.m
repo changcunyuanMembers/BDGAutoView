@@ -7,6 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "UIView+AutoLayout.h"
+#import "Masonry.h"
+
+
+
 
 @interface ViewController ()
 
@@ -14,8 +19,47 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UILabel *label1 = [[UILabel alloc] init];
+    label1.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
+    label1.font = [UIFont systemFontOfSize:20];
+    label1.numberOfLines = 0;
+    label1.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:label1];
+    
+    [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.right.mas_equalTo(-5);
+        make.left.mas_equalTo(5);
+    }];
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(300, 300));
+    }];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
+    label.font = [UIFont systemFontOfSize:20];
+    label.numberOfLines = 0;
+    label.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_bottom).with.offset(10);
+        make.right.equalTo(view.mas_right);
+        make.left.equalTo(view.mas_left);
+    }];
+    
+    [self.view updateContentConstraints];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
