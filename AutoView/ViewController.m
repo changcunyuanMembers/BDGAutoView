@@ -25,13 +25,14 @@
     label1.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
     label1.font = [UIFont systemFontOfSize:20];
     label1.numberOfLines = 0;
+    label1.isAutoLayout = @"0";
     label1.backgroundColor = [UIColor blueColor];
     [self.view addSubview:label1];
     
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(20);
-        make.right.mas_equalTo(-5);
-        make.left.mas_equalTo(5);
+        make.right.mas_equalTo(-10);
+        make.left.mas_equalTo(10);
     }];
     
     UIView *view = [[UIView alloc] init];
