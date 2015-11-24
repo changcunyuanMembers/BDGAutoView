@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kAutoScale [AutoManager shareManager].scale
+#define kAutoSize(x) (kAutoScale * x)
+
 @interface AutoManager : NSObject
 
 + (AutoManager *)shareManager;

@@ -8,35 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^AutoLayoutBlock)(void);
-
 @interface UIView (AutoLayout)
 
-@property (nonatomic, strong) NSNumber *isAutoLayout;
+/**
+ *  是否开启自动适配, 默认为YES
+ */
+@property (nonatomic, strong) id isAutoLayout;
+
+/**
+ *  是否是自定义视图，默认为NO
+ */
+@property (nonatomic, strong) id isCustom;
 
 /**
  *  更新子视图约束
  */
 - (void)updateContentConstraints;
 
-/**
- *  更新子视图frame
- */
-- (void)updateContentFrame;
-
-
-/**
- *  更新视图本身约束
- *
- *  @param isUpdateSubView 是否更新subView
- */
-- (void)updateOriginConstraints:(BOOL)isUpdateSubView;
-
-/**
- *  更新视图本身frame
- *
- *  @param isUpdateSubView 是否更新subView
- */
-- (void)updateOriginFrame:(BOOL)isUpdateSubView;
 
 @end

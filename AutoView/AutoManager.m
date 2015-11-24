@@ -9,6 +9,7 @@
 #import "AutoManager.h"
 #import <UIKit/UIKit.h>
 
+
 static AutoManager *shareManager = nil;
 
 @implementation AutoManager

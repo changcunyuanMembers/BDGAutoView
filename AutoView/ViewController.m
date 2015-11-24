@@ -36,6 +36,7 @@
     
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor redColor];
+    view.alpha = 0.3;
     [self.view addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,6 +46,7 @@
     
     TempView *temp1 = [[TempView alloc] initWithFrame:CGRectZero];
     temp1.backgroundColor = [UIColor blackColor];
+    temp1.isCustom = @"1";
     [view addSubview:temp1];
     
     [temp1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,7 +68,6 @@
         make.left.equalTo(view.mas_left);
     }];
     
-    [view updateContentConstraints];
     [self.view updateContentConstraints];
     
     // Do any additional setup after loading the view, typically from a nib.
