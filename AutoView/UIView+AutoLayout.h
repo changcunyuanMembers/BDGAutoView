@@ -13,12 +13,12 @@
 /**
  *  是否开启自动适配, 默认为YES
  */
-@property (nonatomic, strong) id isAutoLayout;
+@property (nonatomic) BOOL isAutoLayout;
 
 /**
  *  是否是自定义视图，默认为NO
  */
-@property (nonatomic, strong) id isCustom;
+@property (nonatomic) BOOL isCustomView;
 
 /**
  *  更新子视图约束

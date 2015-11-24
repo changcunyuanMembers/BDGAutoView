@@ -16,8 +16,8 @@
     if (self) {
             
         UILabel *label1 = [[UILabel alloc] init];
-        label1.text = @"我是TempView中子视图";
-        label1.font = [UIFont systemFontOfSize:15];
+        label1.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
+        label1.font = [UIFont systemFontOfSize:20];
         label1.numberOfLines = 0;
         label1.backgroundColor = [UIColor greenColor];
         [self addSubview:label1];

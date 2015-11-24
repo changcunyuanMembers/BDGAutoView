@@ -42,10 +42,15 @@ static AutoManager *shareManager = nil;
     float stdHeight = 568;
     
     if (SCREEN_WIDTH <= stdWidth && SCREEN_HEIGHT <= stdHeight) {
+        
         scale = 1.0;
+        
     } else if (SCREEN_WIDTH / stdWidth > SCREEN_HEIGHT / stdHeight) {
+        
         scale = SCREEN_HEIGHT / stdHeight;
+        
     } else {
+        
         scale = SCREEN_WIDTH / stdWidth;
     }
     return scale;

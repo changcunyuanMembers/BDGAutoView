@@ -10,6 +10,7 @@
 #import "UIView+AutoLayout.h"
 #import "Masonry.h"
 #import "TempView.h"
+#import "AutoManager.h"
 
 @interface ViewController ()
 
@@ -25,8 +26,8 @@
     label1.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
     label1.font = [UIFont systemFontOfSize:20];
     label1.numberOfLines = 0;
-    label1.isAutoLayout = @"0";
-    label1.backgroundColor = [UIColor blueColor];
+    label1.isAutoLayout = NO;
+    label1.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:label1];
     
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -37,7 +38,7 @@
     
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor redColor];
-    view.alpha = 0.3;
+    view.alpha = 0.5;
     [self.view addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -47,7 +48,7 @@
     
     TempView *temp1 = [[TempView alloc] initWithFrame:CGRectZero];
     temp1.backgroundColor = [UIColor blackColor];
-    temp1.isCustom = @"1";
+    temp1.isCustomView = YES;
     [view addSubview:temp1];
     
     [temp1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +61,7 @@
     label.text = @"希望大家一起努力来完成这个库，对每个人成长都是很有帮助的";
     label.font = [UIFont systemFontOfSize:20];
     label.numberOfLines = 0;
-    label.backgroundColor = [UIColor blueColor];
+    label.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:label];
     
     [label mas_makeConstraints:^(MASConstraintMaker *make) {

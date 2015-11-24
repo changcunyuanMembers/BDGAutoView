@@ -13,38 +13,56 @@
 static char isAutoKey = 'a';
 static char isCustomKey = 'b';
 
+@interface UIView ()
+
+/**
+ *  存储自动布局值
+ */
+@property (nonatomic, strong) id autoLayoutValue;
+
+/**
+ *  存储自定义布局值
+ */
+@property (nonatomic, strong) id customViewValue;
+
+@end
+
 @implementation UIView (AutoLayout)
 
-- (id)isAutoLayout {
-    id value = objc_getAssociatedObject(self, &isAutoKey);
-    if ([value boolValue]) {
-        return @"0";
-    }
-    return @"1";
+@dynamic isCustomView;
+@dynamic isAutoLayout;
+
+- (void)setIsAutoLayout:(BOOL)isAutoLayout {
+    self.autoLayoutValue = isAutoLayout ? @"0" : @"1";
 }
 
-- (void)setIsAutoLayout:(id)isAutoLayout {
+- (void)setIsCustomView:(BOOL)isCustomView {
+    self.customViewValue = isCustomView ? @"1" : @"0";
+}
+
+- (void)setAutoLayoutValue:(id)autoLayoutValue {
+    objc_setAssociatedObject(self, &isAutoKey, autoLayoutValue, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (id)autoLayoutValue {
     
-    NSString *value = @"1";
-    if ([isAutoLayout boolValue]) {
-        value = @"0";
-    }
-    objc_setAssociatedObject(self, &isAutoKey, value, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    id value = objc_getAssociatedObject(self, &isAutoKey);
+    return [value boolValue] ? @"0" : @"1";
 }
 
-- (id)isCustom {
+- (void)setCustomViewValue:(id)customViewValue {
+    objc_setAssociatedObject(self, &isCustomKey, customViewValue, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (id)customViewValue {
     return objc_getAssociatedObject(self, &isCustomKey);
-}
-
-- (void)setIsCustom:(id)isCustom {
-    objc_setAssociatedObject(self, &isCustomKey, isCustom, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 // 更新约束
 - (void)updateContentConstraints {
     
     for (UIView *v in self.subviews) {
-        if ([v.isAutoLayout boolValue]) {
+        if ([v.autoLayoutValue boolValue]) {
             [self updateContentConstraints:v];
         }
     }
@@ -53,9 +71,9 @@ static char isCustomKey = 'b';
 // 更新某个视图约束
 - (void)updateContentConstraints:(UIView *)view {
     
-    if (view.isCustom) {
+    if (view.customViewValue) {
         for (UIView *v in view.subviews) {
-            if (v.isCustom) {
+            if (v.customViewValue) {
                 [self updateContentConstraints:view];
             } else {
                 [self update:view];
